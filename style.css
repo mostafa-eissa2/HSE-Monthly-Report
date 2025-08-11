@@ -255,7 +255,6 @@ body {
     flex-grow: 1;
 }
 
-/* --- Footer Styles --- */
 footer {
     text-align: center;
     padding: 25px 15px;
@@ -280,6 +279,26 @@ footer {
     transform: translateY(-4px);
 }
 
+.social-icons svg {
+    /* This is the crucial part that was missing */
+    width: 32px;
+    height: 32px;
+    fill: #555;
+    transition: fill 0.3s ease;
+}
+
+.social-icons a:hover svg {
+    fill: var(--primary-color);
+}
+
+.footer-credit {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #777;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: ltr;
+}
+/* === END OF FOOTER STYLES === */
 /* --- Animations --- */
 @keyframes fadeIn {
     from {
