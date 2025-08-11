@@ -352,15 +352,26 @@ body.lang-ar .header-bar {
 
 /* In style.css (at the very end) */
 
+/* --- Footer Styles (Corrected for Mobile) --- */
 footer {
     text-align: center;
-    padding: 15px 10px;
-    margin-top: 10px;
+    padding: 25px 15px; /* Added more vertical padding */
+    margin-top: 40px; /* Increased space from content above */
+    border-top: 1px solid var(--border-color); /* Added a subtle line for separation */
+}
+
+/* This is the main fix for the container */
+.social-icons {
+    display: flex;          /* Activates Flexbox */
+    flex-wrap: wrap;        /* Allows icons to wrap to the next line */
+    justify-content: center;/* Keeps icons centered horizontally */
+    gap: 20px;              /* Modern way to add space between icons */
+    margin-bottom: 15px;    /* Adds space between icons and credit text */
 }
 
 .social-icons a {
     display: inline-block;
-    margin: 0 12px;
+    /* margin is now handled by 'gap', so we can remove it from here */
     transition: transform 0.3s ease;
 }
 
@@ -381,7 +392,7 @@ footer {
 
 .footer-credit {
     margin-top: 10px;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Slightly smaller for a cleaner look */
     color: #777;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     direction: ltr;
