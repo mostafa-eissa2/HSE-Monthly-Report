@@ -1,0 +1,388 @@
+/* --- General & Fonts --- */
+:root {
+    --primary-color: #005A9C;
+    --secondary-color: #00A3E0;
+    --text-color: #333;
+    --bg-color: #f4f7f9;
+    --card-bg-color: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* You can replace the old body rules with this one */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+body.lang-en {
+    font-family: 'Roboto', sans-serif;
+    direction: ltr;
+}
+
+body.lang-ar {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+}
+
+/* --- Language Switcher --- */
+.header-bar {
+    background-color: var(--primary-color);
+    padding: 10px 40px;
+    text-align: left;
+}
+
+body.lang-ar .header-bar {
+    text-align: right;
+}
+
+.lang-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.lang-btn:hover {
+    background-color: #00bfff;
+    transform: scale(1.05);
+}
+
+
+/* --- Container & Form --- */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: var(--card-bg-color);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.subtitle {
+    color: #666;
+    margin-top: -15px;
+    margin-bottom: 30px;
+}
+
+#hseForm fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+#hseForm legend {
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 0 10px;
+    font-size: 1.2em;
+}
+
+#hseForm label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+#hseForm input[type="text"],
+#hseForm input[type="number"],
+#hseForm input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#hseForm input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(0, 163, 224, 0.2);
+}
+
+#hseForm button {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    width: 100%;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+#hseForm button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 90, 156, 0.3);
+}
+
+/* --- Input Grid Table --- */
+.input-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 10px 15px;
+    align-items: center;
+}
+
+.input-grid .grid-header {
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.input-grid .grid-label {
+    font-weight: 500;
+}
+
+.input-grid input {
+    margin-top: 0 !important;
+    text-align: center;
+}
+
+.single-column-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0 15px;
+}
+
+.single-column-grid label {
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    .input-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .input-grid .grid-header {
+        display: none;
+    }
+
+    .input-grid .grid-label {
+        font-weight: bold;
+        margin-top: 15px;
+        background-color: #f7f7f7;
+        padding: 8px;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    .input-grid>div:not(.grid-label):not(.grid-header) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .input-grid>div:not(.grid-label):not(.grid-header)>input:first-child::placeholder="الشركة";
+}
+
+
+/* --- Report Page Styles --- */
+.report-container header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.report-container header h1 {
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.report-container header .subtitle {
+    margin: 5px 0 0 0;
+}
+
+.report-container header img {
+    max-width: 180px;
+    max-height: 80px;
+    border-radius: 6px;
+}
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.kpi-card {
+    background-color: var(--card-bg-color);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    opacity: 0;
+}
+
+.kpi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.kpi-card h2 {
+    margin-top: 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.kpi-card p {
+    font-size: 2.1em;
+    /* قللنا حجم الخط قليلاً من 2.5em */
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 10px 0 0 0;
+
+    /* الإضافات الجديدة لحل المشكلة */
+    line-height: 1.2;
+    /* لضمان وجود مسافة جيدة إذا التف النص لسطر جديد */
+    word-wrap: break-word;
+    /* للالتفاف في الحالات القصوى */
+    overflow-wrap: break-word;
+    /* النسخة الأحدث من الخاصية السابقة */
+}
+
+.chart-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 992px) {
+    .chart-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* === MODIFIED/NEW CSS RULES START HERE === */
+.chart-card {
+    background-color: var(--card-bg-color);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    min-height: 400px;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    opacity: 0;
+
+    /* ADDED to control internal layout */
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-card.full-width {
+    grid-column: 1 / -1;
+}
+
+.chart-card h3 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #444;
+    /* ADDED to prevent h3 from growing */
+    flex-shrink: 0;
+}
+
+/* NEW rule for the wrapper div */
+.chart-container {
+    position: relative;
+    /* ADDED to make it fill the remaining space in the card */
+    flex-grow: 1;
+}
+
+/* === MODIFIED/NEW CSS RULES END HERE === */
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.kpi-card:nth-child(1),
+.chart-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.kpi-card:nth-child(2),
+.chart-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.kpi-card:nth-child(3),
+.chart-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.kpi-card:nth-child(4),
+.chart-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.chart-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+/* In style.css (at the very end) */
+
+footer {
+    text-align: center;
+    padding: 15px 10px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 12px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-4px);
+}
+
+.social-icons svg {
+    width: 32px;
+    height: 32px;
+    fill: #555;
+    transition: fill 0.3s ease;
+}
+
+.social-icons a:hover svg {
+    fill: var(--primary-color);
+}
+
+.footer-credit {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #777;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: ltr;
+}

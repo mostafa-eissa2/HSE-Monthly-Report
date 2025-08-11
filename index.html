@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSE Data Entry Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Health, Safety & Environment Report</h1>
+        <p class="subtitle">Enter the data from the report to generate interactive charts.</p>
+
+        <form id="hseForm">
+            <fieldset>
+                <legend>Basic Report Information</legend>
+                <label for="companyName">Company Name:</label>
+                <input type="text" id="companyName" placeholder="Enter company name" required>
+                <label for="preparedBy">Prepared By:</label>
+                <input type="text" id="preparedBy" placeholder="e.g., Mostafa Eissa" required>
+                <label for="logoUpload">Upload Company Logo:</label>
+                <input type="file" id="logoUpload" accept="image/*" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Manpower & Man-hours</legend>
+                <label for="manpowerCompany">Manpower (Company):</label>
+                <input type="number" id="manpowerCompany" value="0" required>
+                <label for="manpowerSC">Manpower (Subcontractor):</label>
+                <input type="number" id="manpowerSC" value="0" required>
+                <label for="manhoursTotal">Total Man-hours without LTI:</label>
+                <input type="number" id="manhoursTotal" value="0" required>
+                <label for="ptwCount">Permit-to-Work (PTW) Count:</label>
+                <input type="number" id="ptwCount" value="0" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Training & Drills</legend>
+                <div class="input-grid">
+                    <div class="grid-header">Item</div>
+                    <div class="grid-header">Company</div>
+                    <div class="grid-header">Subcontractor</div>
+                    <div class="grid-label">Induction Training</div>
+                    <div><input type="number" id="inductionCompany" placeholder="Company" required></div>
+                    <div><input type="number" id="inductionSC" placeholder="Subcontractor" required></div>
+                    <div class="grid-label">General Training</div>
+                    <div><input type="number" id="trainingCompany" placeholder="Company" required></div>
+                    <div><input type="number" id="trainingSC" placeholder="Subcontractor" required></div>
+                </div>
+                <div class="single-column-grid" style="margin-top: 20px;">
+                    <label for="drills">HSE Drills Count:</label>
+                    <input type="number" id="drills" value="0" required>
+                    <label for="campaigns">HSE Campaigns Count:</label>
+                    <input type="number" id="campaigns" value="0" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Incident Classification</legend>
+                <div class="input-grid">
+                    <div class="grid-header">Item</div>
+                    <div class="grid-header">Company</div>
+                    <div class="grid-header">Subcontractor</div>
+                    <div class="grid-label">Fatality</div>
+                    <div><input type="number" id="fatalityCompany" placeholder="Company" required></div>
+                    <div><input type="number" id="fatalitySC" placeholder="Subcontractor" required></div>
+                    <div class="grid-label">Lost Time Injury (LTI)</div>
+                    <div><input type="number" id="ltiCompany" placeholder="Company" required></div>
+                    <div><input type="number" id="ltiSC" placeholder="Subcontractor" required></div>
+                    <div class="grid-label">Medical Treatment Case</div>
+                    <div><input type="number" id="mtcCompany" placeholder="Company" required></div>
+                    <div><input type="number" id="mtcSC" placeholder="Subcontractor" required></div>
+                    <div class="grid-label">First Aid Injury</div>
+                    <div><input type="number" id="firstAidCompany" placeholder="Company" required></div>
+                    <div><input type="number" id="firstAidSC" placeholder="Subcontractor" required></div>
+                    <div class="grid-label">Environmental Incident</div>
+                    <div><input type="number" id="envIncidentCompany" placeholder="Company" required></div>
+                    <div><input type="number" id="envIncidentSC" placeholder="Subcontractor" required></div>
+                    <div class="grid-label">Property Damage</div>
+                    <div><input type="number" id="propDamageCompany" placeholder="Company" required></div>
+                    <div><input type="number" id="propDamageSC" placeholder="Subcontractor" required></div>
+                    <div class="grid-label">Near Miss</div>
+                    <div><input type="number" id="nearmissCompany" placeholder="Company" required></div>
+                    <div><input type="number" id="nearmissSC" placeholder="Subcontractor" required></div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>HSE Observations</legend>
+                <div class="input-grid">
+                    <div class="grid-header">Item</div>
+                    <div class="grid-header">Company</div>
+                    <div class="grid-header">Subcontractor</div>
+                    <div class="grid-label">Unsafe Act</div>
+                    <div><input type="number" id="unsafeActCompany" placeholder="Company" required></div>
+                    <div><input type="number" id="unsafeActSC" placeholder="Subcontractor" required></div>
+                    <div class="grid-label">Unsafe Condition</div>
+                    <div><input type="number" id="unsafeConditionCompany" placeholder="Company" required>
+                    </div>
+                    <div><input type="number" id="unsafeConditionSC" placeholder="Subcontractor" required>
+                    </div>
+                    <div class="grid-label">Environmental Impact</div>
+                    <div><input type="number" id="envImpactCompany" placeholder="Company" required></div>
+                    <div><input type="number" id="envImpactSC" placeholder="Subcontractor" required></div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Inspection Reports (Company Only)</legend>
+                <div class="single-column-grid">
+                    <label for="hazardReport">Hazard Reports</label>
+                    <input type="number" id="hazardReport" value="0" required>
+                    <label for="observationCards">Observation Cards</label>
+                    <input type="number" id="observationCards" value="0" required>
+                    <label for="siteTour">Monthly Site Tours</label>
+                    <input type="number" id="siteTour" value="0" required>
+                    <label for="walkDown">Weekly Walk-Downs</label>
+                    <input type="number" id="walkDown" value="0" required>
+                    <label for="equipmentInsp">Equipment Inspections</label>
+                    <input type="number" id="equipmentInsp" value="0" required>
+                    <label for="internalAudit">Internal Audits</label>
+                    <input type="number" id="internalAudit" value="0" required>
+                    <label for="externalAudit">External Audits</label>
+                    <input type="number" id="externalAudit" value="0" required>
+                </div>
+            </fieldset>
+
+            <button type="submit">Generate Visual Report</button>
+        </form>
+    </div>
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/mostafa-eissa-dev" target="_blank" title="LinkedIn"><svg
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.43 12.9,11.2V10.13H10.13V18.5H12.9V13.57C12.9,12.8 13.5,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,6 7.78,5.2 6.88,5.2A1.69,1.69 0 0,0 5.2,6.88C5.2,7.78 6,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z" />
+                </svg></a>
+            <a href="mailto:mostafaeissa231@gmail.com" target="_blank" title="Gmail"><svg viewBox="0 0 24 24">
+                    <path
+                        d="M20,4H4A2,2 0 0,0 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6A2,2 0 0,0 20,4M20,8L12,13L4,8V6L12,11L20,6V8Z" />
+                </svg></a>
+        </div>
+        <p class="footer-credit">Designed & Developed by Mostafa Eissa</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
