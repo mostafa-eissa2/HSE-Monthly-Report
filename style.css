@@ -397,3 +397,12 @@ footer {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     direction: ltr;
 }
+
+/* --- Mobile Fix for KPI Cards --- */
+@media (max-width: 768px) {
+  .kpi-grid {
+    /* On screens smaller than 768px, force the grid into a 2x2 layout */
+    grid-template-columns: 1fr 1fr;
+    gap: 15px; /* Optionally reduce the gap on smaller screens */
+  }
+}
